@@ -535,13 +535,13 @@ def main():
 
     message = "今天是星期二，明天是星期三"
     phonemes = chinese_to_phonemes(pinyin_parser, message)
-    phonemes = phonemes.replace("^ ", "")
+    #  phonemes = phonemes.replace("^ ", "")
     #
     input_ids = get_text(phonemes, hps)
 
     x_tst = input_ids.unsqueeze(0)
     x_tst_lengths = torch.LongTensor([input_ids.size(0)])
-    sid = torch.tensor([100], dtype=torch.int64)
+    sid = torch.tensor([170], dtype=torch.int64)
     audio = (
         net_g.infer(
             x_tst,

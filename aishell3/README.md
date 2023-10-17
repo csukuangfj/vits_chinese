@@ -9,6 +9,10 @@ language:
 请去 https://huggingface.co/jackyqs/vits-aishell3-175-chinese/tree/main
 下载模型。 
 
+# 3500.txt
+3500.txt is downloaded from
+https://github.com/kaienfr/Font/blob/master/learnfiles/%E5%B8%B8%E7%94%A8%E6%B1%89%E5%AD%97%E5%BA%93%203500.txt
+
 
 # aishell3数据介绍:
 
