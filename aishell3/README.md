@@ -13,6 +13,10 @@ language:
 3500.txt is downloaded from
 https://github.com/kaienfr/Font/blob/master/learnfiles/%E5%B8%B8%E7%94%A8%E6%B1%89%E5%AD%97%E5%BA%93%203500.txt
 
+# 所有可显汉字库.txt
+来源于
+https://github.com/kaienfr/Font/blob/master/learnfiles/%E6%89%80%E6%9C%89%E5%8F%AF%E6%98%BE%E6%B1%89%E5%AD%97%E5%BA%93.txt
+
 
 # aishell3数据介绍:
 
