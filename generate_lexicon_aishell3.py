@@ -12,10 +12,19 @@ def generate_tokens():
 
 
 def generate_lexicon():
-    with open("./aishell3/3500.txt", encoding="utf-8") as f:
-        words = f.read().strip()
-    words = list(set(list(words)))
+    words = set()
+    with open("./aishell3/所有可显汉字库.txt", encoding="utf-8") as f:
+        for line in f:
+            if "," not in line:
+                continue
+            word = line.strip().split()[-1]
+            words.add(word)
+
+    words = list(words)
     words.sort()
+    with open("./aishell3/words.txt", "w", encoding="utf-8") as f:
+        for w in words:
+            print(w, file=f)
 
     load_pinyin_dict()
     pinyin_parser = Pinyin(MyConverter())
