@@ -39,14 +39,20 @@ def generate_lexicon():
             phonemes = phonemes[1:-2]
             phonemes = " ".join(phonemes)
             f.write(f"{w} {phonemes}\n")
+        seen = set()
         for a, b in word_list_zh:
+            if a in seen:
+                print(f"skip {a}")
+                continue
+            seen.add(a)
             phonemes = chinese_to_phonemes(pinyin_parser, b)
             phonemes = phonemes.split()
             # Remove the first sil, the last two sil and eos
             phonemes = phonemes[1:-2]
             phonemes = " ".join(phonemes)
-            print(a, b, phonemes)
+            #  print(a, b, phonemes)
             f.write(f"{a} {phonemes}\n")
+        print(f"added {len(seen)} word group")
 
     print(f"Generated {lexicon}")
 
