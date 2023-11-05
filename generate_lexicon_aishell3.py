@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from test_aishell3 import load_pinyin_dict, Pinyin, MyConverter, chinese_to_phonemes
 from text.symbols import symbols
+from polyphones_zh import word_list_zh
 
 
 def generate_tokens():
@@ -38,6 +39,15 @@ def generate_lexicon():
             phonemes = phonemes[1:-2]
             phonemes = " ".join(phonemes)
             f.write(f"{w} {phonemes}\n")
+        for a, b in word_list_zh:
+            print(a, b)
+            phonemes = chinese_to_phonemes(pinyin_parser, b)
+            phonemes = phonemes.split()
+            # Remove the first sil, the last two sil and eos
+            phonemes = phonemes[1:-2]
+            phonemes = " ".join(phonemes)
+            f.write(f"{a} {phonemes}\n")
+
     print(f"Generated {lexicon}")
 
 
